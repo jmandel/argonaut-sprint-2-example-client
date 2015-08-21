@@ -1,0 +1,14 @@
+{
+  "name": "argonaut-sprint-2-sample-client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "./node_modules/http-server/bin/http-server -p 8000 ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.8.0"
+  }
+}
