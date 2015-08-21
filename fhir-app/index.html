@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://rawgit.com/smart-on-fhir/client-js/dstu2-wip/dist/fhir-client.js"></script>
+  </head>
+  <body>
+    <h1>Search for patients</h1>
+
+    <pre id="results">searching...</pre>
+
+    <script type="text/javascript">
+      FHIR.oauth2.ready(function(smart){
+        var patients = smart.api.Patient.search().then(function(patients){
+          respon = patients;
+          var result = document.getElementById('results');
+          result.innerHTML = JSON.stringify(patients, null, 2);
+        });
+      });
+    </script>
+  </body>
+</html>

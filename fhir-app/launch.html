@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://rawgit.com/smart-on-fhir/client-js/dstu2-wip/dist/fhir-client.js"></script>
+    <script>
+      FHIR.oauth2.authorize({
+        "server": "https://fhir-api-dstu2.smarthealthit.org",
+        "client": {
+          "client_id": "my_web_app",
+          "scope":  "user/*.read"
+        }
+      });
+    </script>
+  </head>
+  Launching...
+</html>
