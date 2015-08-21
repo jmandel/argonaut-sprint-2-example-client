@@ -2,9 +2,12 @@
   "name": "argonaut-sprint-2-sample-client",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "serve": "./node_modules/http-server/bin/http-server -p 8000 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jmandel/argonaut-sprint-2-example-client.git"
   },
   "author": "",
   "license": "ISC",
