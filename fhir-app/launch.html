@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://rawgit.com/smart-on-fhir/client-js/dstu2-wip/dist/fhir-client.js"></script>
+    <script src="fhir-client.js"></script>
     <script>
-      FHIR.oauth2.authorize({
-        "server": "https://fhir-api-dstu2.smarthealthit.org",
-        "client": {
-          "client_id": "my_web_app",
-          "scope":  "user/*.read"
+      var target = window.location.hash.slice(1) || "smart";
+      var servers = {
+
+        smart: {
+          "server": "https://fhir-api-dstu2.smarthealthit.org",
+            "client": {
+            "client_id": "my_web_app",
+            "scope": "user/*.read"}
+        },
+        intersys: {
+          "server": "https://argonaut.intersystems.com/fhir",
+            "client": {
+            "client_id": "mJQwLdjgrhKISG0d9DXKORILNzOpNGU1jJek9GWKskI",
+            "scope":  "user/*.read"
+          }
+        },
+        epic: {
+          "server": "https://open-ic.epic.com/Argonaut/api/FHIR/Argonaut",
+            "client": {
+            "client_id": "7B80DBB3FD0447008D64C5EEDEDCDC8E",
+            "scope":  "user/*.read"
+          }
+        },
+        i2b2: {
+          "server": "https://52.21.38.135/srv-dstu2-0.2/api",
+            "client": {
+            "client_id": "fcclient1",
+            "scope":  "user/*.read"
+          }
+        },
+        meditech: {
+          "server": "http://direct.meditech.com/FHIR/api2",
+            "client": {
+            "client_id": "5519c77f2c47df600a812a91",
+            "client_secret": "meditech",
+            "scope":  "user/*.read"
+          }
+        },
+        cerner: {
+          // http://localhost:8000/fhir-app/launch.html?launch=4f31fa80-e7aa-4f33-bc97-295cc1044edc
+          "server": "https://fhir.sandboxcernerpowerchart.com/may2015/d075cf8b-3261-481d-97e5-ba6c48d3b41f",
+            "client": {
+            "client_id": "9996227b-3388-4ac9-b0f6-0e40166a7cd2",
+            "scope":  "user/*.read"
+          }
         }
-      });
+      }
+
+      FHIR.oauth2.authorize(servers[target]);
     </script>
   </head>
   Launching...
